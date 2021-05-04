@@ -38,6 +38,7 @@ def Ayuda():
     return(jsonify(Datos))
 
 
+
 @app.route('/Pacientes',methods=['GET'])
 def ObtenPersona():
     global Persona
@@ -76,23 +77,23 @@ def Obten():
 
 
 @app.route('/Doctor',methods=['GET'])
-def ObtenPersona():
+def ObtenDoc():
     global Doctores
-    Datos=[]
+    DatosD=[]
     for D in Doctores:
-        objeto ={
-            "NombreD":D.getNombre(),
-            "ApellidoD":D.getApellido(),
-            "EdadD":D.getEdad(),
+        objetoD ={
+            'NombreD':D.getNombre(),
+            'ApellidoD':D.getApellido(),
+            'EdadD':D.getEdad(),
             'SexoD':D.getSexo(),
             'nombreUsuarioD': D.getNomUsuario(),
             'ContraD': D.getContra(),
             'TeleD': D.getTele(),
-            'Especial': D.getEspecial(),
-            'Atendido': D.getCitas()
-            }
-        Datos.append(objeto)
-    return(jsonify(Datos))
+            'Especial':D.getEspecial(),
+            'Atendido':D.getCitas()
+        }
+        DatosD.append(objetoD)
+    return(jsonify(DatosD))
 
 @app.route('/Medicina',methods=['GET'])
 def ObtenMedicinas():
