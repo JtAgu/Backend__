@@ -90,7 +90,7 @@ def ObtenDoc():
             'ContraD': D.getContra(),
             'TeleD': D.getTele(),
             'Especial':D.getEspecial(),
-            'Atendido':D.getCitas()
+            'Atendido':D.getCita()
         }
         DatosD.append(objetoD)
     return(jsonify(DatosD))
