@@ -76,23 +76,23 @@ def Obten():
 
 
 @app.route('/Doctor',methods=['GET'])
-def ObtenDoc():
+def ObtenPersona():
     global Doctores
-    DatosD=[]
+    Datos=[]
     for D in Doctores:
-        objetoD ={
-            'NombreD':D.getNombre(),
-            'ApellidoD':D.getApellido(),
-            'EdadD':D.getEdad(),
+        objeto ={
+            "NombreD":D.getNombre(),
+            "ApellidoD":D.getApellido(),
+            "EdadD":D.getEdad(),
             'SexoD':D.getSexo(),
             'nombreUsuarioD': D.getNomUsuario(),
             'ContraD': D.getContra(),
             'TeleD': D.getTele(),
-            'Especial':D.getEspecial(),
-            'Atendido':D.getCitas()
-        }
-        DatosD.append(objetoD)
-    return(jsonify(DatosD))
+            'Especial': D.getEspecial(),
+            'Atendido': D.getCitas()
+            }
+        Datos.append(objeto)
+    return(jsonify(Datos))
 
 @app.route('/Medicina',methods=['GET'])
 def ObtenMedicinas():
