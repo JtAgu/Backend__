@@ -31,13 +31,11 @@ Administrador=Admin("Abner","Cardona","admin",1234)
 
 @app.route('/',methods=['GET'])
 def Ayuda():
-
     objeto ={
         "Nombre":"Hola"
     }
     Datos.append(objeto)
     return(jsonify(Datos))
-
 
 
 @app.route('/Pacientes',methods=['GET'])
